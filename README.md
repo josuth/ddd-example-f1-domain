@@ -1,2 +1,15 @@
 # ddd-example-f1-domain
-Ejemplo de definición de un modelo de dominio para carreras de F1
+An example of a model for F1 racing following DDD.
+
+Ubicuous language:
+- Driver
+- Car
+- Circuit
+- TrackStatus
+
+Entities:
+
+Aggregates:
+
+Domain Services:
+
