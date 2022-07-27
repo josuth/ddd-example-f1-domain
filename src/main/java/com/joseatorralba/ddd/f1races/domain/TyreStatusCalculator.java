@@ -10,9 +10,9 @@ public class TyreStatusCalculator {
 
 	/** The degradation matrix. type of tyre X track status */
 	private float degradationMatrix[][] = {
-			{  5.0F,  4.0F, 4.0F },
-			{ 10.0F,  6.0F, 4.0F },
-			{ 10.0F,  6.0F, 4.0F }};
+			{  5.0F,  6.0F, 6.0F },
+			{ 10.0F,  4.0F, 5.0F },
+			{ 10.0F,  5.0F, 4.0F }};
 	
 	/** The grip matrix. Type of tyre X track status  */
 	private float gripMatrix[][] = {
@@ -31,10 +31,15 @@ public class TyreStatusCalculator {
 		return degradationMatrix[tyre.getIndex()][trackStatus.getIndex()];
 	}
 	
-	public Float calculateTyreGrip(Tyre tyre, TrackStatus trackStatus, Float baseDegradation)	{
-		float grip = gripMatrix[tyre.getIndex()][trackStatus.getIndex()];
-		grip -= baseDegradation;
-		return grip;
+	/**
+	 * Calculate tyre grip.
+	 *
+	 * @param tyre the tyre
+	 * @param trackStatus the track status
+	 * @return the float
+	 */
+	public Float calculateTyreGrip(Tyre tyre, TrackStatus trackStatus)	{
+		return gripMatrix[tyre.getIndex()][trackStatus.getIndex()];
 	}
 	
 }
