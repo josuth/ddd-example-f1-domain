@@ -9,23 +9,16 @@ public class Driver {
 	private static final float FATIGUE_BOUND = 80.0F;
 	
 	@Getter private String name;
-	@Getter private Car car;	
 	
-	@Getter private int position;
 	@Getter private float fatigue;
 	
-	public Driver(String name, Car car, int startingGridPosition) {
-		super();
+	public Driver(String name) {
 		this.name = name;
-		this.car = car;
-		this.position = startingGridPosition;
-		
 		this.fatigue = 0.0F;
 	}
 	
-	public void update(Integer kilometers, TrackStatus trackStatus) throws TyredDriverException, CarIsStoppedException	{
+	public void drive(Integer kilometers) throws TyredDriverException	{
 		updateFatigue(kilometers);
-		car.update(kilometers, trackStatus);
 	}
 
 	private void updateFatigue(Integer kilometers) throws TyredDriverException {

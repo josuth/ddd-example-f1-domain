@@ -20,6 +20,8 @@ public class Car {
 	
 	/** type of tyres */
 	private Tyre tyres;
+	
+	@Getter private Driver driver;
 		
 	// Car status
 	/** litres of fuel **/
@@ -40,18 +42,35 @@ public class Car {
 	 * Instantiates a new car.
 	 *
 	 * @param number the number
-	 * @param constructor the constructor
+	 * @param teamName the team name
 	 * @param fuelComsumption the fuel comsumption
 	 * @param tyres the tyres
+	 * @param driver the driver
 	 */
-	protected Car(Integer number, String teamName, Float fuelComsumption, Tyre tyres) {
+	public Car(Integer number, String teamName, Float fuelComsumption, Tyre tyres, Driver driver) {
 		super();
 		this.number = number;
 		this.teamName = teamName;
 		this.fuelConsumption = fuelComsumption;
 		this.tyres = tyres;
+		this.driver = driver;
+		
 		this.fuel = 100.0F;
 		this.tyresDegradation = 0.0F;
+		this.started = false;
+	}
+	
+	/**
+	 * Start.
+	 */
+	public void start() {
+		this.started = true;
+	}
+	
+	/**
+	 * Stop.
+	 */
+	public void stop() {
 		this.started = false;
 	}
 	
@@ -61,10 +80,12 @@ public class Car {
 	 * @param kilometers the kilometers traveled since the last update
 	 * @param trackStatus the current track status
 	 * @throws CarIsStoppedException 
+	 * @throws TyredDriverException 
 	 */
-	protected void update(Integer kilometers, TrackStatus trackStatus) throws CarIsStoppedException	{
+	public void move(Integer kilometers, TrackStatus trackStatus) throws CarIsStoppedException, TyredDriverException	{
 		updateFuel(kilometers);
 		updateTyreStatus(kilometers, trackStatus); 
+		driver.drive(kilometers);
 	}
 	
 	/**
@@ -73,7 +94,7 @@ public class Car {
 	 * @param trackStatus the track status
 	 * @return the tyres grip
 	 */
-	protected Float getTyresGrip(TrackStatus trackStatus)	{
+	public Float getTyresGrip(TrackStatus trackStatus)	{
 		return tyresCalculator.calculateTyreGrip(tyres, trackStatus) - this.tyresDegradation;
 	}
 
