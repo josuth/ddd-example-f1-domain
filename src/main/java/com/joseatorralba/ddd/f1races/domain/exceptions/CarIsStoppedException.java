@@ -1,7 +1,7 @@
 package com.joseatorralba.ddd.f1races.domain.exceptions;
 
-import com.joseatorralba.ddd.f1races.domain.Car;
-import com.joseatorralba.ddd.f1races.domain.enums.CarIncident;
+import com.joseatorralba.ddd.f1races.domain.entities.Car;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.CarIncident;
 
 import lombok.Getter;
 

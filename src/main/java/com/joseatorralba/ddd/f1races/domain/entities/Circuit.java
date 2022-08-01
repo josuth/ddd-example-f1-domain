@@ -1,8 +1,8 @@
-package com.joseatorralba.ddd.f1races.domain;
+package com.joseatorralba.ddd.f1races.domain.entities;
 
 import org.springframework.stereotype.Component;
 
-import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
 
 import lombok.Getter;
 

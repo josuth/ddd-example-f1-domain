@@ -1,10 +1,12 @@
-package com.joseatorralba.ddd.f1races.domain;
+package com.joseatorralba.ddd.f1races.domain.entities;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
+
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Position;
 
 @Component
 public class Classification {
@@ -38,26 +40,35 @@ public class Classification {
 	}
 
 	private void updateCarPosition(Car car, long time) {
-		Position position = table.get(car);
-		if (position == null)	{
-			position = Position.builder()
-			.car(car)
-			.time(time)
-			.lapsCompleted(0)
-			.positionNumber(null)
-			.build();
+		Position p = table.get(car);
+		if (p == null)	{
+			table.put(car, Position.builder()
+					.car(car)
+					.time(time)
+					.lapsCompleted(1)
+					.positionNumber(null)
+					.build());
+		
+		} else {
+			table.put(car, Position.builder()
+					.car(car)
+					.time(time)
+					.lapsCompleted(p.getLapsCompleted()+1)
+					.positionNumber(p.getPositionNumber())
+					.build());
 		}
-		position.setLapsCompleted(position.getLapsCompleted()+1);
-		position.setTime(time);
-		table.put(car, position);
 	}
 	
 	private void updateTable()	{
 		List<Position> orderedList = orderCars();
 		int positionNumber = 1;
 		for (Position p : orderedList)	{
-			p.setPositionNumber(positionNumber++);
-			table.put(p.getCar(), p);			
+			table.put(p.getCar(), Position.builder()
+					.car(p.getCar())
+					.time(p.getTime())
+					.lapsCompleted(p.getLapsCompleted())
+					.positionNumber(positionNumber++)
+					.build());			
 		}
 	}
 

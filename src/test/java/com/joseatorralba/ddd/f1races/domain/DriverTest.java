@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.joseatorralba.ddd.f1races.domain.entities.Driver;
 import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
 import com.joseatorralba.ddd.f1races.domain.exceptions.TyredDriverException;
 

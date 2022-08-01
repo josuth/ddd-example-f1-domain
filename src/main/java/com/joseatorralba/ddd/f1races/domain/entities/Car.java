@@ -1,14 +1,14 @@
-package com.joseatorralba.ddd.f1races.domain;
+package com.joseatorralba.ddd.f1races.domain.entities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
-import com.joseatorralba.ddd.f1races.domain.enums.CarIncident;
-import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
-import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
 import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
 import com.joseatorralba.ddd.f1races.domain.exceptions.TyredDriverException;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.CarIncident;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Tyre;
 
 import lombok.Getter;
 

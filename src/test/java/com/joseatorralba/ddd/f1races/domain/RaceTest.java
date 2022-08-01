@@ -17,11 +17,16 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.joseatorralba.ddd.f1races.domain.enums.CarIncident;
-import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.entities.Car;
+import com.joseatorralba.ddd.f1races.domain.entities.Circuit;
+import com.joseatorralba.ddd.f1races.domain.entities.Classification;
+import com.joseatorralba.ddd.f1races.domain.entities.Race;
 import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
 import com.joseatorralba.ddd.f1races.domain.exceptions.RaceAlreadyRunningException;
 import com.joseatorralba.ddd.f1races.domain.exceptions.TyredDriverException;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.CarIncident;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Position;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
 
 @ExtendWith(MockitoExtension.class)
 public class RaceTest {

@@ -1,6 +1,6 @@
 package com.joseatorralba.ddd.f1races.domain.exceptions;
 
-import com.joseatorralba.ddd.f1races.domain.Driver;
+import com.joseatorralba.ddd.f1races.domain.entities.Driver;
 
 import lombok.Getter;
 

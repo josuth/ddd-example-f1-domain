@@ -8,7 +8,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.entities.Circuit;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
 
 @ExtendWith(MockitoExtension.class)
 public class CircuitTest {

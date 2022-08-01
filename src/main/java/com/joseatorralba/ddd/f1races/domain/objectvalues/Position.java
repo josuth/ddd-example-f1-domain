@@ -1,4 +1,6 @@
-package com.joseatorralba.ddd.f1races.domain;
+package com.joseatorralba.ddd.f1races.domain.objectvalues;
+
+import com.joseatorralba.ddd.f1races.domain.entities.Car;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,9 +12,9 @@ import lombok.Setter;
 @Getter
 public class Position implements Comparable<Position>	{
 	
-	@Setter private float time;
-	@Setter private int lapsCompleted;
-	@Setter private Integer positionNumber;
+	private float time;
+	private int lapsCompleted;
+	private Integer positionNumber;
 	private Car car;
 	
 	@Override

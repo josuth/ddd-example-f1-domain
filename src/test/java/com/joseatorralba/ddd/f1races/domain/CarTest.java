@@ -16,10 +16,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
-import com.joseatorralba.ddd.f1races.domain.enums.CarIncident;
-import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
-import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
+import com.joseatorralba.ddd.f1races.domain.entities.Car;
+import com.joseatorralba.ddd.f1races.domain.entities.Driver;
 import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.CarIncident;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Tyre;
 
 @ExtendWith(MockitoExtension.class)
 public class CarTest {

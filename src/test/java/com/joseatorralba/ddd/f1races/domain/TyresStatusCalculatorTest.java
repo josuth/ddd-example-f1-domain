@@ -8,8 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
-import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
-import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Tyre;
 
 @ExtendWith(MockitoExtension.class)
 public class TyresStatusCalculatorTest {

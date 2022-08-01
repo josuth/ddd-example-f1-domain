@@ -12,7 +12,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
+import com.joseatorralba.ddd.f1races.domain.entities.Car;
+import com.joseatorralba.ddd.f1races.domain.entities.Classification;
+import com.joseatorralba.ddd.f1races.domain.entities.Driver;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Position;
+import com.joseatorralba.ddd.f1races.domain.objectvalues.Tyre;
 
 @ExtendWith(MockitoExtension.class)
 public class ClassificationTest {
