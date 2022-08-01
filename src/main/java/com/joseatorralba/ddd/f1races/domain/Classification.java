@@ -6,10 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Component
-@Slf4j
 public class Classification {
 
 	private HashMap<Car, Position> table;
@@ -29,8 +26,6 @@ public class Classification {
 		updateCarPosition(car, time);
 		updateTable();
 		Position p = getPosition(car);
-		log.debug("{} is #{} with time {}", p.getCar().getDriver().getName(), 
-				p.getPositionNumber(), p.getTime());
 		return p;
 	}
 	
@@ -49,6 +44,7 @@ public class Classification {
 			.car(car)
 			.time(time)
 			.lapsCompleted(0)
+			.positionNumber(null)
 			.build();
 		}
 		position.setLapsCompleted(position.getLapsCompleted()+1);
@@ -56,7 +52,7 @@ public class Classification {
 		table.put(car, position);
 	}
 	
-	protected void updateTable()	{
+	private void updateTable()	{
 		List<Position> orderedList = orderCars();
 		int positionNumber = 1;
 		for (Position p : orderedList)	{

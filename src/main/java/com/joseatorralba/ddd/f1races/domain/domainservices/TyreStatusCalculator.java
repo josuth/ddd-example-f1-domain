@@ -1,6 +1,9 @@
-package com.joseatorralba.ddd.f1races.domain;
+package com.joseatorralba.ddd.f1races.domain.domainservices;
 
 import org.springframework.stereotype.Component;
+
+import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
 
 /**
  * The Class TyreStatusCalculator.

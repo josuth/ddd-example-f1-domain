@@ -1,4 +1,4 @@
-package com.joseatorralba.ddd.f1races.domain;
+package com.joseatorralba.ddd.f1races.domain.enums;
 
 import lombok.Getter;
 

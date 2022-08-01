@@ -7,26 +7,41 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.util.ReflectionTestUtils;
+
+import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
+import com.joseatorralba.ddd.f1races.domain.enums.CarIncident;
+import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
+import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
 
 @ExtendWith(MockitoExtension.class)
 public class CarTest {
-	
+		
+	@InjectMocks
+	Car car;
+	 
 	@Mock
 	Driver driver;
-	
-	@InjectMocks
-	Car car = new Car(1, "Ferrari", 1.5F, Tyre.DRY, driver);
 	
 	@Mock
 	TyreStatusCalculator tyresCalculator;
 	
+	@BeforeEach
+	public void init()	{
+		car = new Car(1, "Ferrari", 1.5F, Tyre.DRY, driver);
+		ReflectionTestUtils.setField(car, "tyresCalculator", tyresCalculator);
+	}
+	
 	@Test
 	public void givenCar_whenCarIsCreated_thenCheckMinInfo_test()	{
+		
 		assertNotNull(car.getNumber());
 		assertNotNull(car.getTeamName());
 		assertEquals(100.0F, car.getFuel());

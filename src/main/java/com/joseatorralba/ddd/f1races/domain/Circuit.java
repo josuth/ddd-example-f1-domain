@@ -2,6 +2,8 @@ package com.joseatorralba.ddd.f1races.domain;
 
 import org.springframework.stereotype.Component;
 
+import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+
 import lombok.Getter;
 
 @Component
@@ -13,7 +15,6 @@ public class Circuit {
 	private TrackStatus trackStatus;
 	
 	public Circuit(String name, Integer lapLenght, Integer laps) {
-		super();
 		this.name = name;
 		this.lapLenght = lapLenght;
 		this.laps = laps;

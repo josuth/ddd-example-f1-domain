@@ -3,6 +3,13 @@ package com.joseatorralba.ddd.f1races.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
+import com.joseatorralba.ddd.f1races.domain.enums.CarIncident;
+import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
+import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
+import com.joseatorralba.ddd.f1races.domain.exceptions.TyredDriverException;
+
 import lombok.Getter;
 
 /**
@@ -35,7 +42,7 @@ public class Car {
 	
 	/** The tyres status calculator */
 	@Autowired
-	private TyreStatusCalculator tyresCalculator;
+	TyreStatusCalculator tyresCalculator;
 	
 	
 	/**
@@ -48,7 +55,6 @@ public class Car {
 	 * @param driver the driver
 	 */
 	public Car(Integer number, String teamName, Float fuelComsumption, Tyre tyres, Driver driver) {
-		super();
 		this.number = number;
 		this.teamName = teamName;
 		this.fuelConsumption = fuelComsumption;

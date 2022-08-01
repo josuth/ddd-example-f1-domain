@@ -7,6 +7,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
+import com.joseatorralba.ddd.f1races.domain.enums.TrackStatus;
+import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
+
 @ExtendWith(MockitoExtension.class)
 public class TyresStatusCalculatorTest {
 

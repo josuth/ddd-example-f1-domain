@@ -12,10 +12,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import lombok.extern.slf4j.Slf4j;
+import com.joseatorralba.ddd.f1races.domain.enums.Tyre;
 
 @ExtendWith(MockitoExtension.class)
-@Slf4j
 public class ClassificationTest {
 
 	@InjectMocks
@@ -38,7 +37,6 @@ public class ClassificationTest {
 		
 		classification.start();
 
-		log.info("------ LAP 1 ------");
 		assertEquals(1, classification.passToFinishLine(car3).getPositionNumber());
 		sleep();
 		assertEquals(2, classification.passToFinishLine(car2).getPositionNumber());
@@ -46,7 +44,6 @@ public class ClassificationTest {
 		assertEquals(3, classification.passToFinishLine(car1).getPositionNumber());
 		sleep();
 		
-		log.info("------ LAP 2 ------");
 		assertEquals(1, classification.passToFinishLine(car3).getPositionNumber());
 		sleep();
 		assertEquals(2, classification.passToFinishLine(car1).getPositionNumber());
@@ -54,7 +51,6 @@ public class ClassificationTest {
 		assertEquals(3, classification.passToFinishLine(car2).getPositionNumber());
 		sleep();
 
-		log.info("------ FINISH ------");
 		assertEquals(1, classification.passToFinishLine(car1).getPositionNumber());
 		sleep();
 		assertEquals(2, classification.passToFinishLine(car3).getPositionNumber());
@@ -81,7 +77,7 @@ public class ClassificationTest {
 	private void sleep() {
 		Random r = new Random(System.currentTimeMillis());
 		try {
-			TimeUnit.MILLISECONDS.sleep(r.nextInt(100));
+			TimeUnit.MILLISECONDS.sleep(r.nextInt(150));
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,7 @@
 package com.joseatorralba.ddd.f1races.domain;
 
+import com.joseatorralba.ddd.f1races.domain.exceptions.TyredDriverException;
+
 import lombok.Getter;
 
 public class Driver {

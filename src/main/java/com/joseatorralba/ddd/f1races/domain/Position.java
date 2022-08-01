@@ -2,18 +2,17 @@ package com.joseatorralba.ddd.f1races.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @Builder
 @AllArgsConstructor
 @Getter
 public class Position implements Comparable<Position>	{
 	
-	private float time;
-	private int lapsCompleted;
-	private int positionNumber;
+	@Setter private float time;
+	@Setter private int lapsCompleted;
+	@Setter private Integer positionNumber;
 	private Car car;
 	
 	@Override
