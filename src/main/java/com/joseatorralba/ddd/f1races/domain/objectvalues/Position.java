@@ -5,7 +5,6 @@ import com.joseatorralba.ddd.f1races.domain.entities.Car;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Builder
 @AllArgsConstructor

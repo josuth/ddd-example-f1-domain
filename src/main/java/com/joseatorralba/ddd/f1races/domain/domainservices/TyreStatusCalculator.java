@@ -1,14 +1,11 @@
 package com.joseatorralba.ddd.f1races.domain.domainservices;
 
-import org.springframework.stereotype.Component;
-
 import com.joseatorralba.ddd.f1races.domain.objectvalues.TrackStatus;
 import com.joseatorralba.ddd.f1races.domain.objectvalues.Tyre;
 
 /**
  * The Class TyreStatusCalculator.
  */
-@Component
 public class TyreStatusCalculator {
 
 	/** The degradation matrix. type of tyre X track status */

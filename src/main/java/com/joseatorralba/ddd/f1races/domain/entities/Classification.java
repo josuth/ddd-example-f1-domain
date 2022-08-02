@@ -4,11 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Component;
-
 import com.joseatorralba.ddd.f1races.domain.objectvalues.Position;
 
-@Component
 public class Classification {
 
 	private HashMap<Car, Position> table;

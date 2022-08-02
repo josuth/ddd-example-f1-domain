@@ -2,8 +2,6 @@ package com.joseatorralba.ddd.f1races.domain.entities;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-
 import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
 import com.joseatorralba.ddd.f1races.domain.exceptions.RaceAlreadyRunningException;
 import com.joseatorralba.ddd.f1races.domain.exceptions.TyredDriverException;
@@ -12,7 +10,6 @@ import com.joseatorralba.ddd.f1races.domain.objectvalues.Position;
 
 import lombok.Getter;
 
-@Component
 public class Race {
 
 	private Circuit circuit;

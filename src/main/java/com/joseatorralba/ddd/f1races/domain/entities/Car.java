@@ -1,7 +1,6 @@
 package com.joseatorralba.ddd.f1races.domain.entities;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.joseatorralba.ddd.f1races.domain.domainservices.TyreStatusCalculator;
 import com.joseatorralba.ddd.f1races.domain.exceptions.CarIsStoppedException;
@@ -15,7 +14,6 @@ import lombok.Getter;
 /**
  * The Class Car.
  */
-@Component
 public class Car {
 	
 	@Getter private Integer number;
